@@ -18,4 +18,12 @@ router.post("/api/books", ({ body }, res) => {
         .catch(err => res.status(500).json(err));
 });
 
+// Delete Book
+router.delete("/api/books/:id", ({ params }, res) => {
+    Book
+        .findByIdAndDelete(params.id)
+        .then(data => res.json(data))
+        .catch(err => res.status(500).json(err));
+});
+
 module.exports = router;
