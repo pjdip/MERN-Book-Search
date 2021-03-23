@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Typography, Box, withStyles } from "@material-ui/core";
 import axios from "axios";
+import API from "../../utils/API";
 import ResultCard from "../../components/ResultCard";
 
 const styles = {
@@ -16,30 +17,37 @@ const Saved = (props) => {
     const [books, setBooks] = useState({});
 
     useEffect(() => {
-        retrieveSavedBooks();
+        getSavedBooks();
     }, []);
 
-    const retrieveSavedBooks = async () => {
+    const getSavedBooks = async () => {
         const books = await axios.get("/api/books");
-        setBooks(books);
+        setBooks(books.data);
+    };
+
+    const deleteBook = async (id) => {
+        await axios.delete(`/api/books/${id}`);
+        getSavedBooks();
     };
 
     const resultMap = () => {
         if (books.length) {
             return books.map(book => {
                 return(<ResultCard
-                    key={book.id}
+                    key={book._id}
+                    id={book._id}
                     title={book.title}
                     authors={book.authors}
                     description={book.description}
-                    image={book.thumbnail}
-                    link={book.infoLink}
+                    image={book.image}
+                    link={book.link}
+                    deleteBook={deleteBook}
                 />);
             });
         } else {
             return(
                 <Typography align="center">
-                    No Books Found, Search for some books and save them
+                    No Books Found, Search for some books to save them
                 </Typography>
             );
         };

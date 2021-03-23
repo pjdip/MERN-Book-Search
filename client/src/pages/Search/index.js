@@ -28,6 +28,7 @@ const Search = () => {
             return results.map(result => {
                 return(<ResultCard
                     key={result.id}
+                    id={result.id}
                     title={result.volumeInfo.title}
                     authors={result.volumeInfo.authors}
                     description={result.volumeInfo.description}

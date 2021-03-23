@@ -8,7 +8,6 @@ router.get("/api/books", (req, res) => {
         .find({})
         .then(books => {
             res.json(books)
-            console.log(books)
         })
         .catch(err => res.status(400).json(err));
 });
@@ -19,16 +18,17 @@ router.post("/api/books", ({ body }, res) => {
         .create(body)
         .then(newBook => {
             res.json(newBook)
-            console.log(newBook)
         })
         .catch(err => res.status(500).json(err));
 });
 
 // Delete Book
-router.delete("/api/books/:id", ({ params }, res) => {
+router.delete("/api/books/:_id", ({ params }, res) => {
     Book
-        .findByIdAndDelete(params.id)
-        .then(data => res.json(data))
+        .findByIdAndDelete(params._id)
+        .then(data => {
+            res.json(data)
+        })
         .catch(err => res.status(500).json(err));
 });
 

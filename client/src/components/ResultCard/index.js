@@ -13,12 +13,15 @@ const styles = {
     },
     gridDescription: {
         flex: 1
+    },
+    infoButton: {
+        padding: "50px"
     }
 };
 
 const ResultCard = (props) => {
 
-    const { title, authors, description, image, link, classes } = props;
+    const { id, title, authors, description, image, link, deleteBook, classes } = props;
     
     const saveBook = () => {
         axios.post("/api/books", { title, authors, description, image, link })
@@ -39,21 +42,7 @@ const ResultCard = (props) => {
               console.log('Error', error.message);
             }
             console.log(error.config);
-          });
-    };
-
-/*     const saveBook = () => {
-        axios.post("/api/books", {
-            title: title,
-            authors: authors,
-            description: description,
-            image: image,
-            link: link
         });
-    }; */
-
-    const deleteBook = (id) => {
-        axios.delete(`/api/books/${id}`);
     };
 
     const multiAuthors = (authors) => {
@@ -70,7 +59,7 @@ const ResultCard = (props) => {
             );
         } else {
             return(
-                <Button onClick={deleteBook(props.id)}>
+                <Button onClick={() => deleteBook(id)}>
                     Delete
                 </Button>
             );
@@ -82,24 +71,24 @@ const ResultCard = (props) => {
             <Grid container>
                 <Grid item sm={6} align="left">
                     <Typography>
-                        {props.title}
+                        {title}
                     </Typography>
                     <Typography>
-                        Written By {multiAuthors(props.authors)}
+                        Written By {multiAuthors(authors)}
                     </Typography>
                 </Grid>
                 <Grid item sm={6} align="right">
                     {SaveORdelete()}
-                    <Button href={props.link} target="_blank" pl={5}>
+                    <Button href={link} target="_blank" className={classes.infoButton}>
                         More Info
                     </Button>
                 </Grid>
             </Grid>
             <Grid container className={classes.imageDescription}>
                 <Grid item>
-                    <img src={props.image} alt="Book Cover" className={classes.gridImage} />
+                    <img src={image} alt="Book Cover" className={classes.gridImage} />
                     <Typography className={classes.gridDescription}>
-                        {props.description}
+                        {description}
                     </Typography>
                 </Grid>
             </Grid>
