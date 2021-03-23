@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Box, TextField, Button, Typography, withStyles } from "@material-ui/core";
-import SearchBar from "material-ui-search-bar";
 import API from "../../utils/API";
 
 const styles = {
@@ -30,21 +29,14 @@ const SearchForm = (props) => {
 
     return(
         <Box>
-{/*             <SearchBar
-                value={this.state.value}
-                onChange={(newValue) => this.setState({ value: newValue })}
-                onRequestSearch={handleSubmit(this.state.value)}
-            /> */}
             <form onSubmit={handleSubmit}>
                 <TextField
                     label="book"
-                    onChange={({target}) => setQuery(target.value)}
+                    onChange={event => setQuery(event.target.value)}
                     value={query}
                 />
             </form>
-            <Button
-                onClick={() => handleSearch(query)}
-            >
+            <Button onClick={() => handleSearch(query)}>
                 Search
             </Button>
         </Box>
