@@ -1,10 +1,34 @@
 # MERN-Book-Search
 
-# Getting Started with Create React App
+## These are the files for the homework assignment associated with section 21 of the OSU Web Development Bootcamp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+* Here is a link to the [github](https://github.com/pjdip/MERN-Book-Search)
+* Here is a link to the deployed [application]()
 
-## Available Scripts
+The goal of this assignment was to build a full-stack MERN application from scratch. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
+
+* [Installation](#installation)
+* [Usage](#usage)
+* [Credits](#credits)
+* [Badges](#badges)
+* [License](#license)
+
+## Installation
+
+Installation requirements include node.js. Dependencies can be loaded by running 'npm install' from the main directory, once the repo has been cloned. Use the command "npm start" from the main directory in order to run the application locally.
+
+## Usage
+
+This is a one page app. Upon loading, you are presented with a search form. Search for different books, Save them to favorites with the "Save" button or view more details with the "More Info" button. View saved books by clicking the Saved button in the Navbar at the top of the page. From the saved books page, you can delete books from your favorites by clicking the "Delete" button.
+
+Here are some screenshots:
+
+![searchResults](./screenshots/searchResult.png)
+
+
+![Filter](public/images/Filter.png)
+
+
 
 In the project directory, you can run:
 
@@ -15,11 +39,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
@@ -41,43 +60,44 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+### Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Credits
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Thanks to React:
+* [website](https://reactjs.org/)
+* [docs](https://create-react-app.dev/)
+* [deployment](https://create-react-app.dev/docs/deployment/#github-pages)
 
-### Analyzing the Bundle Size
+Thanks to [Google Books API](https://developers.google.com/books/docs/v1/using)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Thanks to [axios](https://github.com/axios/axios#handling-errors) for issues with error-handling
 
-### Making a Progressive Web App
+Special Thanks to Material-UI:
+* [npm](https://material-ui.com/getting-started/installation/)
+* [docs](https://material-ui.com/getting-started/installation/)
+* [AppBar](https://v3.material-ui.com/demos/app-bar/)
+* [Typography](https://material-ui.com/api/typography/)
+* [Container](https://material-ui.com/components/container/)
+* [Grid](https://material-ui.com/components/grid/)
+* [Spacing](https://material-ui.com/system/spacing/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Special Thanks to [ChilledCow](https://www.youtube.com/channel/UCSJ4gkVC6NrvII8umztf0Ow) for providing chill lofi beats to code to
 
-### Advanced Configuration
+## Badges
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+![languages](https://img.shields.io/github/languages/count/pjdip/MERN-Book-Search)
+![top-language](https://img.shields.io/github/languages/top/pjdip/MERN-Book-Search)
+![repo-size](https://img.shields.io/github/repo-size/pjdip/MERN-Book-Search)
+![open-issues](https://img.shields.io/github/issues-raw/pjdip/MERN-Book-Search)
+![last-commit](https://img.shields.io/github/last-commit/pjdip/MERN-Book-Search)
 
-### Deployment
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Licensed under the [GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/)
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-
-Material-UI:
-https://v3.material-ui.com/demos/app-bar/
-https://material-ui.com/api/typography/
-https://material-ui.com/components/container/
-https://material-ui.com/system/spacing/
-https://material-ui.com/components/grid/
-
-axios error handling
-https://github.com/axios/axios#handling-errors
+---

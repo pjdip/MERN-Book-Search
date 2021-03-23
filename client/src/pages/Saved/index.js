@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Typography, Box, withStyles } from "@material-ui/core";
+import { Box, withStyles } from "@material-ui/core";
 import ResultHead from "../../components/ResultHead";
 import NotFound from "../../components/NotFound";
 import axios from "axios";
-import API from "../../utils/API";
 import ResultCard from "../../components/ResultCard";
 
 const styles = {

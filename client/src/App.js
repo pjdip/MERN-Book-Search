@@ -5,8 +5,6 @@ import Saved from "../src/pages/Saved";
 import Search from "../src/pages/Search";
 import Footer from "../src/components/Footer";
 import Container from "@material-ui/core/Container";
-
-import logo from './logo.svg';
 import './App.css';
 
 function App() {

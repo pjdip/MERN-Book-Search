@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, TextField, Button, Typography, withStyles } from "@material-ui/core";
+import { Box, TextField, Button } from "@material-ui/core";
 import ResultCard from "../../components/ResultCard";
 import ResultHead from "../../components/ResultHead";
 import NotFound from "../../components/NotFound";
