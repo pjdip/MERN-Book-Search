@@ -1,22 +1,31 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { AppBar, Toolbar, Typography, withStyles } from "@material-ui/core";
+import { Box, AppBar, Toolbar, Typography, withStyles } from "@material-ui/core";
 
 const styles = {
     grow: {
         flexGrow: 1
+    },
+    link: {
+        textDecoration: "none",
+        margin: "6px"
     }
 };
 
-const Nav = () => {
+const Nav = (props) => {
+    const { classes } = props;
     return(
-        <AppBar position="static">
-            <Toolbar>
-                <Typography>Google Book Search</Typography>
-                <NavLink to="/saved">Saved Books</NavLink>
-                <NavLink to="/search">Search</NavLink>
-            </Toolbar>
-        </AppBar>
+        <div className={classes.grow}>
+            <AppBar position="static">
+                <Toolbar>
+                    <Typography variant="h5">Book Search</Typography>
+                    <Box ml="auto">
+                        <NavLink to="/saved" className={classes.link}>Saved</NavLink>
+                        <NavLink to="/search" className={classes.link}>Search</NavLink>
+                    </Box>
+                </Toolbar>
+            </AppBar>
+        </div>
     );
 };
 
