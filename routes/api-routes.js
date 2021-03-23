@@ -6,9 +6,7 @@ const router = express.Router();
 router.get("/api/books", (req, res) => {
     Book
         .find({})
-        .then(books => {
-            res.json(books)
-        })
+        .then(books => res.json(books))
         .catch(err => res.status(400).json(err));
 });
 
@@ -16,9 +14,7 @@ router.get("/api/books", (req, res) => {
 router.post("/api/books", ({ body }, res) => {
     Book
         .create(body)
-        .then(newBook => {
-            res.json(newBook)
-        })
+        .then(newBook => res.json(newBook))
         .catch(err => res.status(500).json(err));
 });
 
@@ -26,9 +22,7 @@ router.post("/api/books", ({ body }, res) => {
 router.delete("/api/books/:_id", ({ params }, res) => {
     Book
         .findByIdAndDelete(params._id)
-        .then(data => {
-            res.json(data)
-        })
+        .then(data => res.json(data))
         .catch(err => res.status(500).json(err));
 });
 
