@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Typography, Box, withStyles } from "@material-ui/core";
+import ResultHead from "../../components/ResultHead";
+import NotFound from "../../components/NotFound";
 import axios from "axios";
 import API from "../../utils/API";
 import ResultCard from "../../components/ResultCard";
@@ -46,9 +48,9 @@ const Saved = (props) => {
             });
         } else {
             return(
-                <Typography align="center">
-                    No Books Found, Search for some books to save them
-                </Typography>
+                <NotFound
+                    missing="You have no saved books. Search for some books to save them"
+                />
             );
         };
     };
@@ -56,9 +58,9 @@ const Saved = (props) => {
     return(
         <div>
             <Box className={classes.bawx}>
-                <Typography align="center" variant="h3">
-                    Saved Books
-                </Typography>
+                <ResultHead
+                    page="Saved Books"
+                />
                 {resultMap()}
             </Box>
         </div>

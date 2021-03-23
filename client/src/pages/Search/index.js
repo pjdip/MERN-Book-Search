@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Box, TextField, Button, Typography, withStyles } from "@material-ui/core";
 import ResultCard from "../../components/ResultCard";
+import ResultHead from "../../components/ResultHead";
+import NotFound from "../../components/NotFound";
 import API from "../../utils/API";
 
 const Search = () => {
@@ -38,9 +40,9 @@ const Search = () => {
             });
         } else {
             return(
-                <Typography align="center">
-                    No Books Found, Please Try Another Search
-                </Typography>
+                <NotFound
+                    missing="No Books Found, Please Try Another Search"
+                />
             );
         };
     };
@@ -60,9 +62,9 @@ const Search = () => {
                 </Button>
             </Box>
             <Box>
-                <Typography align="center" variant="h3">
-                    Results
-                </Typography>
+                <ResultHead
+                    page="Results"
+                />
                 {resultMap()}
             </Box>
         </div>
