@@ -3,7 +3,7 @@
 ## These are the files for the homework assignment associated with section 21 of the OSU Web Development Bootcamp
 
 * Here is a link to the [github](https://github.com/pjdip/MERN-Book-Search)
-* Here is a link to the deployed [application]()
+* Here is a link to the deployed [application](https://warm-thicket-94243.herokuapp.com/)
 
 The goal of this assignment was to build a full-stack MERN application from scratch. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
 
