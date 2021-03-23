@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-/* import SearchForm from "../../components/SearchForm"; */
 import { Box, TextField, Button, Typography, withStyles } from "@material-ui/core";
 import ResultCard from "../../components/ResultCard";
 import API from "../../utils/API";
@@ -38,7 +37,7 @@ const Search = () => {
             });
         } else {
             return(
-                <Typography>
+                <Typography align="center">
                     No Books Found, Please Try Another Search
                 </Typography>
             );
@@ -47,12 +46,10 @@ const Search = () => {
 
     return(
         <div>
-            <h1>Search Page</h1>
-{/*             <SearchForm /> */}
             <Box>
                 <form onSubmit={handleSubmit}>
                     <TextField
-                        label="book"
+                        label="search a book"
                         onChange={event => setQuery(event.target.value)}
                         value={query}
                     />
@@ -62,6 +59,9 @@ const Search = () => {
                 </Button>
             </Box>
             <Box>
+                <Typography align="center" variant="h3">
+                    Results
+                </Typography>
                 {resultMap()}
             </Box>
         </div>

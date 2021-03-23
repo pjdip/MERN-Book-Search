@@ -16,7 +16,7 @@ function App() {
                 <Nav />
                 <Container maxWidth="xl">
                     <Route exact path="/saved" component={Saved} />
-                    <Route exact path="/search" component={Search} />
+                    <Route exact path="/" component={Search} />
                 </Container>
                 <div className="sticky">
                     <Footer />

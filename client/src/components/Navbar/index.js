@@ -21,7 +21,7 @@ const Nav = (props) => {
                     <Typography variant="h5">Book Search</Typography>
                     <Box ml="auto">
                         <NavLink to="/saved" className={classes.link}>Saved</NavLink>
-                        <NavLink to="/search" className={classes.link}>Search</NavLink>
+                        <NavLink to="/" className={classes.link}>Search</NavLink>
                     </Box>
                 </Toolbar>
             </AppBar>

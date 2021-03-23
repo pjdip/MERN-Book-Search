@@ -21,8 +21,36 @@ const ResultCard = (props) => {
     const { title, authors, description, image, link, classes } = props;
     
     const saveBook = () => {
-        axios.post("/api/books", { title, authors, description, image, link });
+        axios.post("/api/books", { title, authors, description, image, link })
+        .catch(function (error) {
+            if (error.response) {
+              // The request was made and the server responded with a status code
+              // that falls out of the range of 2xx
+              console.log(error.response.data);
+              console.log(error.response.status);
+              console.log(error.response.headers);
+            } else if (error.request) {
+              // The request was made but no response was received
+              // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+              // http.ClientRequest in node.js
+              console.log(error.request);
+            } else {
+              // Something happened in setting up the request that triggered an Error
+              console.log('Error', error.message);
+            }
+            console.log(error.config);
+          });
     };
+
+/*     const saveBook = () => {
+        axios.post("/api/books", {
+            title: title,
+            authors: authors,
+            description: description,
+            image: image,
+            link: link
+        });
+    }; */
 
     const deleteBook = (id) => {
         axios.delete(`/api/books/${id}`);
@@ -34,7 +62,7 @@ const ResultCard = (props) => {
     };
 
     const SaveORdelete = () => {
-        if (useLocation().pathname === "/search") {
+        if (useLocation().pathname === "/") {
             return(
                 <Button onClick={saveBook}>
                     Save

@@ -6,7 +6,10 @@ const router = express.Router();
 router.get("/api/books", (req, res) => {
     Book
         .find({})
-        .then(books => res.json(books))
+        .then(books => {
+            res.json(books)
+            console.log(books)
+        })
         .catch(err => res.status(400).json(err));
 });
 
@@ -14,7 +17,10 @@ router.get("/api/books", (req, res) => {
 router.post("/api/books", ({ body }, res) => {
     Book
         .create(body)
-        .then(newBook => res.json(newBook))
+        .then(newBook => {
+            res.json(newBook)
+            console.log(newBook)
+        })
         .catch(err => res.status(500).json(err));
 });
 
