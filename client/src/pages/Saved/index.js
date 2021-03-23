@@ -1,9 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { Typography } from "@material-ui/core";
+import { Typography, Box, withStyles } from "@material-ui/core";
 import axios from "axios";
 import ResultCard from "../../components/ResultCard";
 
-const Saved = () => {
+const styles = {
+    bawx: {
+        marginTop: 20
+    }
+};
+
+const Saved = (props) => {
+
+    const { classes } = props;
 
     const [books, setBooks] = useState({});
 
@@ -31,15 +39,22 @@ const Saved = () => {
         } else {
             return(
                 <Typography align="center">
-                    No Books Found, Please Try Another Search
+                    No Books Found, Search for some books and save them
                 </Typography>
             );
         };
     };
 
     return(
-        <h1>Saved Page</h1>
+        <div>
+            <Box className={classes.bawx}>
+                <Typography align="center" variant="h3">
+                    Saved Books
+                </Typography>
+                {resultMap()}
+            </Box>
+        </div>
     );
 };
 
-export default Saved;
+export default withStyles(styles)(Saved);
