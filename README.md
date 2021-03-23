@@ -26,7 +26,7 @@ Here are some screenshots:
 ![searchResults](./screenshots/searchResult.png)
 
 
-![Filter](public/images/Filter.png)
+![savedBooks](./screenshots/savedBooks.png)
 
 
 
