@@ -18,7 +18,9 @@ function App() {
                     <Route exact path="/saved" component={Saved} />
                     <Route exact path="/search" component={Search} />
                 </Container>
-                <Footer />
+                <div className="sticky">
+                    <Footer />
+                </div>
             </div>
         </Router>
     );
